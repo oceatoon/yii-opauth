@@ -24,7 +24,7 @@ return array(
 	'modules' => array(
 		'opauth' => array(
 			'opauthParams' => array(
-				'Security.salt' => 'LDFmiilYf8Fyw5W10rx4W1KsVrieQCnpBzzpTBWA5vJidQKDx8pMJbmw28R1C4m',
+				'security_salt' => 'LDFmiilYf8Fyw5W10rx4W1KsVrieQCnpBzzpTBWA5vJidQKDx8pMJbmw28R1C4m',
 				'Strategy' => array(
 					'facebook' => array(
 						'app_id' => 'YOUR_FACEBOOK_APP_ID',
@@ -37,8 +37,21 @@ return array(
 	...
 );
 ```
+Access 
+-------
+127.0.0.1/your-app/opauth/facebook
+This will try to access your Facebook app credentials 
+and test a login
+if login succeeds it will return to the callback controller 
+and the resulting FB object, you can then manipulate as you wish in your application 
+
+Notice
+-------
+this will take to facebook login and comme back to the callback controller 
+and print the result
+but refreshing will not work , you really have to go through the whole process again from the url above 
+otherwise the session is emtpy
 
 Issues?
 -------
-
-If you have any issues, please highlight them in [yii-opauth's GitHub issues](https://github.com/kahwee/yii-opauth/issues).
+If you have any issues, please highlight them in [yii-opauth's GitHub issues](https://github.com/oceatoon/yii-opauth/issues).
