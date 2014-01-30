@@ -12,6 +12,7 @@ class OpauthModule extends CWebModule {
 		if ($_SERVER['REQUEST_URI'] != $path . 'callback') {
 			$this->opauthParams['path'] = $path;
 			$this->opauthParams['Callback.uri'] = '{path}callback';
+			
 			$opauth = new Opauth($this->opauthParams);
 		}
 	}
